@@ -19,7 +19,6 @@ const posts = [ // dummy post fro testing
 
 app.get('/posts', (req, res) => {
     res.json(posts) // reponds with the information of posts when the "/post" is called in url
-
 }) //get request to read information
 
 app.post('/login', (req, res) => { //Authenticate user(this is done separatly, encryting the credentials basicaally)
@@ -27,8 +26,8 @@ app.post('/login', (req, res) => { //Authenticate user(this is done separatly, e
     const username = req.body.username
     const user = { name: username }
 
-    jwt.sign(user, process.env.ACCESS_TOKEN_SECRET)
-    //signing the token with env variables
+    const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET) //signing the token with env variables
+    res.json({ accessToken: accessToken})
 })
 
 app.listen(3000) // localhost port process to list to for request
