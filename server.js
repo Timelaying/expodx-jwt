@@ -14,7 +14,7 @@ const posts = [ // dummy post fro testing
     }
 ]
 
-app.get('/posts', (res, req) => {
+app.get('/posts', (req, res) => {
     res.json(posts) // reponds with the information of posts when the "/post" is called in url
 
 }) //get request to read information
