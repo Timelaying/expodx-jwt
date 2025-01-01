@@ -22,8 +22,13 @@ app.get('/posts', (req, res) => {
 
 }) //get request to read information
 
-app.get('/login', (req, res) => { //Authenticate user
+app.post('/login', (req, res) => { //Authenticate user(this is done separatly, encryting the credentials basicaally)
      
+    const username = req.body.username
+    const user = { name: username }
+
+    jwt.sign(user, process.env.ACCESS_TOKEN_SECRET)
+    //signing the token with env variables
 })
 
 app.listen(3000) // localhost port process to list to for request
