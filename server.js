@@ -1,9 +1,11 @@
 // imports 
+require('dotenv').config()
+
 const express =  require('express') // express is needed as a middle man for the API
 const app = express() // app equals to express
-
 const jwt = require('jsonwebtoken')
-app.use(express.json)
+
+app.use(express.json())
 
 
 const posts = [ // dummy post fro testing
