@@ -5,6 +5,7 @@ const app = express() // app equals to express
 const jwt = require('jsonwebtoken')
 app.use(express.json)
 
+
 const posts = [ // dummy post fro testing
     {
         username: 'Kyle',
